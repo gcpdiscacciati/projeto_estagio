@@ -25,6 +25,6 @@ Já a página 'Show me the Numbers' contém os gráficos gerados pela análise e
 ![ShowMeTheNumbers](https://raw.githubusercontent.com/gcpdiscacciati/projeto_estagio/gh-pages/graficos1.PNG)
 
 ### Download
-* [Arquivo ZIP](./https://github.com/gcpdiscacciati/projeto_estagio/archive/master.zip)
+* [Arquivo ZIP](https://github.com/gcpdiscacciati/projeto_estagio/archive/master.zip)
 
 
