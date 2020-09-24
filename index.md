@@ -1,10 +1,12 @@
-## Welcome to GitHub Pages
+## Finding Movies
 
-You can use the [editor on GitHub](https://github.com/gcpdiscacciati/projeto_estagio/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Este projeto teve como finalidade criar uma página web com Python, utilizando a biblioteca Flask. Além disso a página utilizava dados de um script Python feito no Jupyter, contendo uma série de atividades relacionadas ao curso de Mineração de Dados Aplicada.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Ao executar o arquivo 'server.py', cria-se a página web usando o localhost:5000, como pode-se ver nas imagens abaixo.
 
-### Markdown
+![Homepage](https://github.com/gcpdiscacciati/projeto_estagio/blob/gh-pages/homepage.PNG)
+
+Página Inicial: nesta página o usuário digita o nome de um filme qualquer (pode ser o nome em pt-BR), e o site retorna 5 filmes similares, mostrando nome e poster.
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
