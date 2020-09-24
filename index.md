@@ -8,8 +8,17 @@ Ao executar o arquivo 'server.py', cria-se a página web usando o localhost:5000
 
 Página Inicial: nesta página o usuário digita o nome de um filme qualquer (pode ser o nome em pt-BR), e o site retorna 5 filmes similares, mostrando nome e poster.
 
-Abaixo, vê-se o resultado da busca "The Godfather":
+Abaixo, vê-se o resultado da busca "The Godfather" e os 5 filmes recomendados baseados nessa busca:
 
 ![Resultado Busca](https://raw.githubusercontent.com/gcpdiscacciati/projeto_estagio/gh-pages/resultado1.PNG)
+![Recomendados](https://raw.githubusercontent.com/gcpdiscacciati/projeto_estagio/gh-pages/resultado2.PNG)
+
+Na página 'Judge your Script', o usuário pode digitar o seu prório "roteiro", e o algoritmo indica se se assemelha com um filme dramático ou não dramático. Existem 2 botões com exemplos pré escolhidos, caso não queira digitar. Observação: Este roteiro deve ser escrito em inglês.
+
+![Judge_Your_Script](https://raw.githubusercontent.com/gcpdiscacciati/projeto_estagio/gh-pages/roteiro1.PNG)
+
+Já a página 'Show me the Numbers' contém os gráficos gerados pela análise exploratória do Dataset.
+
+![ShowMeTheNumbers](https://raw.githubusercontent.com/gcpdiscacciati/projeto_estagio/gh-pages/graficos1.PNG)
 
 
