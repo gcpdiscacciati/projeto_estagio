@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Show me the Numbers!</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="shortcut icon" href="/static/favicon.ico">
+		<script src="https://kit.fontawesome.com/329b0b582b.js" crossorigin="anonymous"></script>
+
+	</head>
+	<body id="corpo_graficos">
+		<header>
+			<ul>
+				<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="/judge-your-script"><i class="fas fa-scroll"></i> Judge your Script</a></li>
+			</ul>
+		</header>
+	
+	  	<h1>Show me the Numbers!</h1>
+	  	<h5 class="graph">Top 20 Movies by Revenue</h5>
+	  	<button class="botaografico" name="revenue">Show Plot</button>
+	  	<div class="plot" id="revenue">
+	  		
+	  	</div>
+	  	
+	  	<h5 class="graph">Top 20 Most Profitable Movies</h5>
+	  	<button class="botaografico" name="profit">Show Plot</button>
+	  	<div class="plot" id="profit">
+	  		
+	  	</div>
+	  
+	  	<h5 class="graph">Top 20 Movies by Popularity (as of March 2020)</h5>
+	  	<button class="botaografico" name="popularity">Show Plot</button>
+	  	<div class="plot" id="popularity">
+	  		
+	  	</div>
+	  	
+	  	<h5 class="graph">Top Rated Movies</h5>
+	  	<button class="botaografico" name="rating">Show Plot</button>
+	  	<div class="plot" id="rating">
+	  		
+	  	</div>
+
+	  	<h5 class="graph">Rating Distribution</h5>
+	  	<button class="botaografico" name="rating_distribution">Show Plot</button>
+	  	<div class="plot" id="rating_distribution">
+	  		
+	  	</div>
+	  	
+	  	<h5 class="graph">Movies Released per Year</h5>
+	  	<button class="botaografico" name="movies_year">Show Plot</button>
+	  	<div class="plot" id="movies_year">
+	  		
+	  	</div>
+	  	
+	  	<h5 class="graph">Correlation Matrix</h5>
+	  	<button class="botaografico" name="correlation">Show Plot</button>
+	  	<div class="plot" id="correlation">
+	  		
+	  	</div>
+	  	
+	  	<footer>Copyright © 2020 Giovanne Discacciati</footer>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var buttons = document.getElementsByTagName("button");
+				var buttonsCount = buttons.length;
+				for (var i = 0; i <= buttonsCount; i += 1) {
+				    buttons[i].onclick = function(e) {
+				        var nome_botao = this.name;
+				        document.getElementById(nome_botao).innerHTML = '<img src="/static/plots/'+nome_botao+'1.png">';
+				        var x = document.getElementById(nome_botao);
+						if (x.style.display !== "block") {
+							x.style.display = "block";
+						} 
+						else {
+							x.style.display = "none";
+						}
+						if (this.innerHTML == "Show Plot"){
+							this.innerHTML = "Hide Plot";
+						}
+						else{
+							this.innerHTML = "Show Plot";
+						}
+					    };
+				}
+				
+			});
+		</script>
+	</body>
+</html>

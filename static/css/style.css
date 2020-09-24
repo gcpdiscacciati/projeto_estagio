@@ -1,0 +1,205 @@
+ul{
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	background-color: #444;
+  	overflow: hidden;
+  	font-size: 20px;
+}
+
+li{
+	display: inline;
+	border-right: 1px solid white;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a{
+	
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: inherit;
+	background-color: #111;
+	text-decoration: none;
+  }
+
+body{
+	background-color: #222;
+	text-align: center;
+	color: white;
+	width: 100%;
+	
+}
+
+h1{
+	text-shadow: 3px 0px 5px #00AFFF;
+	margin-top: 30px;
+}
+
+h3{
+	text-shadow: 2px 0px 5px #00AFFF;
+	margin-top: 30px;
+}
+
+form.inputdata button {
+	float: center;
+	background-color: #444;
+	color: white;
+	border: 1px solid #888;
+	border-radius: 10px;
+	cursor: pointer;
+	text-shadow: 2px 0px 10px white;
+}
+
+form.inputdata button:hover {
+	background-color: #111;
+}
+
+
+input{
+	text-align: center;
+	width: 280px;
+
+}
+
+#nomefilme{
+	
+}
+
+#botaobusca{
+
+}
+
+
+#nome{
+	margin-top: 30px;
+	text-align: center;
+}
+
+#poster{
+	margin-bottom: 50px;
+}
+
+#similar{
+	height: 1000px;
+
+}
+
+#title0{
+	position: relative;
+	right: 350px;
+}
+
+#poster1{
+	position: relative;
+	right: 350px;
+}
+
+#title2{
+	position: relative;
+	bottom: 447px;
+}
+
+#poster3{
+	position: relative;
+	bottom: 447px;
+}
+
+#title4{
+	position: relative;
+	left: 350px;
+	bottom: 894px;
+}
+
+#poster5{
+	position: relative;
+	left: 350px;
+	bottom: 894px;
+}
+
+#title6{
+	position: relative;
+	right: 175px;
+	bottom: 894px;
+	margin-top: 30px;
+}
+
+#poster7{
+	position: relative;
+	right: 175px;
+	bottom: 894px;
+}
+
+#title8{
+	position: relative;
+	left: 175px;
+	bottom: 1341px;
+	
+}
+
+#poster9{
+	position: relative;
+	left: 175px;
+	bottom: 1341px;
+}
+
+textarea{
+	border-radius: 10px;
+	overflow: hidden;
+	width: 480px;
+	height: 270px;
+	text-align: justify;
+}
+
+#resposta{
+	margin-top: 30px;
+}
+
+#julgamento{
+	margin-top: 30px;
+	font-size: 18px;
+	height: 100px;
+}
+
+#exemplos{
+	margin-bottom: 50px;
+	font-size: 18px;
+	height: 100px;
+}
+
+
+
+.botaografico{
+	float: center;
+	background-color: #444;
+	color: white;
+	border: 1px solid #888;
+	border-radius: 10px;
+	cursor: pointer;
+	text-shadow: 2px 0px 10px white;
+}
+
+.botaografico:hover {
+	background-color: #111;
+}
+
+.graph{
+	text-shadow: 2px 0px 5px #00AFFF;
+	margin-top: 30px;
+}
+
+.plot{
+	margin-top: 10px;
+}
+
+#correlation{
+	height: 700px;
+}
+

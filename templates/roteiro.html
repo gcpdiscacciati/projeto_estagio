@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Judge Your Script</title>
+		<meta charset="utf-8">
+		<!--<link rel="stylesheet" type="text/css" href="estilo.css">-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="shortcut icon" href="/static/favicon.ico">
+		<script src="https://kit.fontawesome.com/329b0b582b.js" crossorigin="anonymous"></script>
+    	
+	</head>
+	<body id="corpo_roteiro">
+		<header>
+			<ul>
+				<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="/plots"><i class="fas fa-chart-line"></i> Show me the Numbers!</a></li>			
+			</ul>
+			
+		</header>
+	  	<h1>Judge Your Script</h1>
+		<form method="POST" class="inputdata" name="form1">
+			<label id="entrada">
+				<h5>Write your own movie script:</h5><textarea name="roteiro" placeholder="Be creative! Write your movie script here." required></textarea>
+			</label>
+			<div>
+				<button type="submit" id="botao">Submit</button>
+			</div>
+			
+		</form>
+		<div id="resposta">
+				<h5>We will tell you if your script seems like a dramatic or non-dramatic movie.</h5>
+			</div>
+		<div id="julgamento">
+			
+		</div>
+		<div id="exemplos">
+			<h5>Example 1 - JOKER (2019)</h5>
+			<button class="botaografico" type="submit" id="exemplo1">Try me</button>
+			<h5>Example 2 - THOR: Ragnarok (2017)</h5>
+			<button class="botaografico" type="submit" id="exemplo2">Try me</button>
+		</div>
+
+		<footer>Copyright © 2020 Giovanne Discacciati</footer>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			// Aguarda o jQuery carregar
+			$(document).ready(function(){
+
+				$.get('roteiros', function(resp){
+					
+					console.log(resp);
+					var is_it_drama = resp
+					document.getElementById('julgamento').innerHTML = is_it_drama
+
+					
+				});
+
+				var exemplo1 = document.getElementById('exemplo1');
+				exemplo1.onclick = function(){
+					var text = "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.";
+					document.forms.form1.roteiro.value = text;
+				}
+
+				var exemplo2 = document.getElementById('exemplo2');
+				exemplo2.onclick = function(){
+					var text = "Imprisoned on the other side of the universe, the mighty Thor finds himself in a deadly gladiatorial contest that pits him against the Hulk, his former ally and fellow Avenger. Thor's quest for survival leads him in a race against time to prevent the all-powerful Hela from destroying his home world and the Asgardian civilization.";
+					document.forms.form1.roteiro.value = text;
+				}
+				
+
+
+			});			
+		</script>
+
+		
+	</body>
+</html>

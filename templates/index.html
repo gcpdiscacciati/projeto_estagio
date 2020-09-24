@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Finding Movies</title>
+
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    	<link rel="stylesheet" href="/static/css/style.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<link rel="shortcut icon" href="/static/favicon.ico">
+    	<script src="https://kit.fontawesome.com/329b0b582b.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li><a href="/judge-your-script"><i class="fas fa-scroll"></i> Judge your Script</a></li>
+				<li><a href="/plots"><i class="fas fa-chart-line"></i> Show me the Numbers!</a></li>			
+			</ul>
+		</header>
+
+		<h1>Finding Movies</h1>
+		<h3>Discover Similar Movies</h3>
+		<h5>Type a movie title: </h5>
+		<form method="POST" class="inputdata" id="form1">
+			<label id="entrada">
+				<input type="text" id="nomefilme" name="nomefilme" placeholder="Ex.: Finding Nemo" required>
+			</label>
+			<div>
+				<button type="submit" id="botaobusca"><i class="fa fa-search"></i> Search</button>
+			</div>
+
+		</form>
+		
+		<div id="nome"></div>
+		<div id="poster"></div>
+		
+		
+		<div id="similar"></div>
+		
+		<footer>Copyright © 2020 Giovanne Discacciati</footer>
+		<!-- Biblioteca jQuery para facilitar a requisição AJAX -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			// Aguarda o jQuery carregar
+			$(document).ready(function(){
+
+				//x = document.getElementById('nomefilme').value;
+				//if (x==''){
+				//	alert("A movie name is required");
+//
+//				}
+
+				$.get('busca', function(resp){
+					
+					console.log(resp);
+					var moviename = resp.results[0].title;
+					var poster_path = resp.results[0].poster_path;
+					document.getElementById("nome").innerHTML = '<h5>Result:</h5><h6>Title: '+moviename+'</h6>'
+					document.getElementById('poster').innerHTML ='<div><img src=https://image.tmdb.org/t/p/original/' + poster_path + ' style="width: 280px"></div>';
+
+				});
+
+				$.get('similar', function(resp){
+					
+					var newHead5 = document.createElement("H5");
+					//var newHead5 = document.createElement("h5")
+					var newcontent = document.createTextNode("Recommended Movies Based on your Search:");
+					//newHead5.appendChild(newcontent)
+					newHead5.appendChild(newcontent);
+					var newDiv = document.createElement("div");
+					var currentDiv = document.getElementById('similar');
+					//document.body.insertBefore(newHead5, newDiv);
+					newDiv.appendChild(newHead5);
+					currentDiv.appendChild(newDiv);
+					//document.body.insertBefore(newDiv, currentDiv);
+					console.log(resp);
+					for (var i in resp){
+						if (i%2 == 0){
+							var nome_filme = resp[i];
+							document.getElementById('similar').innerHTML += '<div id="title'+i+'"><h6>Title: '+nome_filme+'</h6></div>';
+						}
+						else{
+							var poster_path = resp[i];
+							if (poster_path == 'no poster found'){
+								document.getElementById('similar').innerHTML += '<div id="poster'+i+'"><h6>No poster Found</h6></div>';
+							}
+							else{
+								document.getElementById('similar').innerHTML += '<div id="poster'+i+'"><img src=https://image.tmdb.org/t/p/original/' + poster_path + ' style="width: 280px"></div>';
+							}
+						}
+					}
+					//var moviename = resp.results[0].title
+					//document.getElementById("nome").innerHTML = '<p>'+moviename+'</p>';
+
+				});
+
+
+			});			
+		</script>
+	</body>
+</html>
